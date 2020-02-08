@@ -69,27 +69,45 @@ for (let every of text){
  * @return {array} changes the result array
  * so that is it compatible with the third method
  */
+// function third() {
+// 	textSplitted.forEach(function(item, index, array) {
+// 		for (let element of item) {
+// 			count = 0
+// 			for(let z = 0; z<element.length; z++) {
+// 				if(search[index].length != element.length) {
+// 					count +=2;
+// 					break;
+// 				} else if (search[index][z] == element[z]){
+// 					continue;
+// 				} else {
+// 					count +=1;
+// 				}
+// 			}
+// 			if (count<2) {
+// 				result.push(item.join(' '));
+// 				break;
+// 			}
+// 		}
+// 	})
+// }
+// 
+
 function third() {
-	textSplitted.forEach(function(item, index, array) {
-		for (let element of item) {
-			count = 0
-			for(let z = 0; z<element.length; z++) {
-				if(search[index].length != element.length) {
-					count +=2;
-					break;
-				} else if (search[index][z] == element[z]){
-					continue;
-				} else {
-					count +=1;
-				}
-			}
-			if (count<2) {
-				result.push(item.join(' '));
-				break;
+	text.forEach(function(item, index, array) {
+		count = 0;
+		for (let e = 0; e<item.length; e++) {	
+			if(item[e] === search[index][e]) {
+				continue;
+			} else {
+				count+=1
 			}
 		}
-	})
+		if (count<2) {
+			result.push(item)
+		}
+	})	
 }
+
 
 /**
  * so this gives question and takes number as an asnwer to choose
